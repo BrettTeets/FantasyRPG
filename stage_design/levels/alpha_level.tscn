@@ -1,0 +1,107 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Mobs/Enemies/genericEnemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Mobs/Player/playerActor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://stage_design/Scenery/Tree.tscn" type="PackedScene" id=3]
+[ext_resource path="res://stage_design/Scenery/30x30Square.tscn" type="PackedScene" id=4]
+[ext_resource path="res://stage_design/Scenery/lamppost.tscn" type="PackedScene" id=5]
+[ext_resource path="res://stage_design/Scenery/SpawnPad.tscn" type="PackedScene" id=6]
+[ext_resource path="res://stage_design/Scenery/Platform.tscn" type="PackedScene" id=7]
+[ext_resource path="res://stage_design/Scenery/testClicker.tscn" type="PackedScene" id=8]
+
+[node name="alpha_level" type="Node"]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.809601, 0, 0.58698, 0, 1, 0, -0.58698, 0, 0.809601, 4.113, 5.39272, 6.72166 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 78.4921, 27.3167, 0 )
+light_color = Color( 0.0588235, 0.00392157, 0.439216, 1 )
+light_energy = 0.34
+
+[node name="ground" type="Node" parent="."]
+
+[node name="30x30Square" parent="ground" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 2.04133, 0, 0, 0, 1, 0.292105, 0.839083, -0.129433 )
+
+[node name="30x30Square2" parent="ground" instance=ExtResource( 4 )]
+transform = Transform( 2.66804, 0, 0, 0, 1, 0, 0, 0, 1.99309, -0.831392, -1.90876, -0.345997 )
+
+[node name="30x30Square3" parent="ground" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.99309, -54.3475, -0.113512, -0.152933 )
+
+[node name="Trees" type="Node" parent="."]
+
+[node name="Tree" parent="Trees" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6405, -0.727437, 21.0706 )
+
+[node name="Tree7" parent="Trees" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.3701, -0.727437, -13.4587 )
+
+[node name="Tree8" parent="Trees" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.4691, -0.727437, 14.4965 )
+
+[node name="Tree9" parent="Trees" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.3039, -0.727437, -15.0456 )
+
+[node name="Tree2" parent="Trees" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50.8993, 1.13065, 23.0938 )
+
+[node name="Tree3" parent="Trees" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.4138, 1.13065, 15.9268 )
+
+[node name="Tree4" parent="Trees" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48.1294, 1.13065, 0.941919 )
+
+[node name="Tree5" parent="Trees" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44.9767, 1.13065, -16.0697 )
+
+[node name="Tree6" parent="Trees" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9252, 1.13065, -16.0697 )
+
+[node name="Stuff" type="Node" parent="."]
+
+[node name="SpawnPad" parent="Stuff" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.692545, 2.79395, -0.357429 )
+
+[node name="Platform" parent="Stuff" instance=ExtResource( 7 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -3.96566, -3.13558, -19.5334 )
+
+[node name="Platform2" parent="Stuff" instance=ExtResource( 7 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 1.06381, -2.22824, -19.5334 )
+
+[node name="Platform3" parent="Stuff" instance=ExtResource( 7 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 6.6894, -1.11538, -19.5334 )
+
+[node name="lamppost" parent="Stuff" instance=ExtResource( 5 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -13.235, 2.46991, -13.3128 )
+
+[node name="lamppost2" parent="Stuff" instance=ExtResource( 5 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12.7718, 2.46991, -13.3128 )
+
+[node name="lamppost3" parent="Stuff" instance=ExtResource( 5 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -13.2345, 2.46991, 11.9739 )
+
+[node name="lamppost4" parent="Stuff" instance=ExtResource( 5 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12.6853, 2.46991, 11.9739 )
+
+[node name="playerActor" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.718701, 3.10568, 0 )
+
+[node name="Camera" parent="playerActor/cameraPivot" index="0"]
+current = true
+
+[node name="playerCharacter" parent="playerActor" index="4"]
+characterName = "Steve"
+
+[node name="genericEnemy" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.97856, 2.88041, -4.50784 )
+
+[node name="Spatial" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.78024, 2.88041, 2.99095 )
+
+[node name="Camera" parent="Spatial" index="2"]
+current = true
+
+[editable path="playerActor"]
+[editable path="Spatial"]

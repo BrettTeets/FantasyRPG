@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Imports/white.png" type="Texture" id=1]
+[ext_resource path="res://UI/diageticStuff/scripts/npcHealthBar3D.gd" type="Script" id=2]
+[ext_resource path="res://UI/diageticStuff/npcHealthBar2D.tscn" type="PackedScene" id=3]
+
+[node name="npcHealthBar3D" type="Sprite3D"]
+flip_v = true
+billboard = 1
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 192, 32 )
+transparent_bg = true
+
+[node name="npcHealthBar2D" parent="Viewport" instance=ExtResource( 3 )]

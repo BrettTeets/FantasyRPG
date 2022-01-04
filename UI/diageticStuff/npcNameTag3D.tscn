@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/diageticStuff/npcNameTag2D.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/diageticStuff/scripts/npcNameTag3D.gd" type="Script" id=2]
+[ext_resource path="res://Imports/white.png" type="Texture" id=3]
+
+[node name="npcNameTag3D" type="Sprite3D"]
+flip_v = true
+billboard = 1
+texture = ExtResource( 3 )
+script = ExtResource( 2 )
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 192, 32 )
+
+[node name="npcNameTag2D" parent="Viewport" instance=ExtResource( 1 )]

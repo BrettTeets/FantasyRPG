@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Imports/new_dynamicfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://UI/diageticStuff/scripts/npcNameTag2D.gd" type="Script" id=2]
+
+[node name="npcNameTag2D" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 192.0
+margin_bottom = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel"]
+margin_right = 192.0
+margin_bottom = 32.0
+grow_vertical = 2
+custom_fonts/font = ExtResource( 1 )
+text = "NPC name Tag"

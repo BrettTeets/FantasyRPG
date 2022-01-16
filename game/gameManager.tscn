@@ -1,0 +1,34 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://items/resources/potion.tres" type="Resource" id=1]
+[ext_resource path="res://game/scripts/itemDatabase.gd" type="Script" id=2]
+[ext_resource path="res://items/resources/shirt.tres" type="Resource" id=3]
+[ext_resource path="res://game/stageManager.gd" type="Script" id=4]
+[ext_resource path="res://levels/resources/alphaLevel.tres" type="Resource" id=5]
+[ext_resource path="res://Mobs/Player/playerActor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/gameManager.gd" type="Script" id=7]
+[ext_resource path="res://UI/GameUI/inventoryMenu/playerInventoryMenu.tscn" type="PackedScene" id=8]
+[ext_resource path="res://UI/GameUI/equipmentMenu/playerEquipmentMenu.tscn" type="PackedScene" id=9]
+
+[node name="gameManager" type="Node"]
+script = ExtResource( 7 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="playerInventoryMenu" parent="CanvasLayer" instance=ExtResource( 8 )]
+pause_mode = 1
+visible = false
+
+[node name="playerEquipmentMenu" parent="CanvasLayer" instance=ExtResource( 9 )]
+pause_mode = 1
+visible = false
+
+[node name="itemDatabase" type="Node" parent="."]
+script = ExtResource( 2 )
+items = [ ExtResource( 1 ), ExtResource( 3 ) ]
+
+[node name="stageManager" type="Node" parent="."]
+script = ExtResource( 4 )
+stages = [ ExtResource( 5 ) ]
+
+[node name="playerActor" parent="stageManager" instance=ExtResource( 6 )]

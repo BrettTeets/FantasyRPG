@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Imports/new_dynamicfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://UI/theme/yrsaFont24.tres" type="DynamicFont" id=1]
 [ext_resource path="res://UI/diageticStuff/scripts/npcNameTag2D.gd" type="Script" id=2]
 
 [node name="npcNameTag2D" type="Control"]

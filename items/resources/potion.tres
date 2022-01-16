@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://items/itemResource.gd" type="Script" id=1]
+[ext_resource path="res://Imports/badPotion.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+stringId = "potion"
+stackable = true
+stackSize = 9
+type = 2
+texture = ExtResource( 2 )

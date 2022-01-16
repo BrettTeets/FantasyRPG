@@ -6,4 +6,4 @@ func _ready():
 	texture = $Viewport.get_texture()
 
 func updateNameTag(text):
-	updateNameTag(text)
+	nameTag.updateNameTag(text)

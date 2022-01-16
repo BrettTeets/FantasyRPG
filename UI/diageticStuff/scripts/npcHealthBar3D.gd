@@ -1,9 +1,9 @@
 extends Sprite3D
 
-onready var bar = $Viewport/health_bar_2d
+onready var bar = $Viewport/npcHealthBar2D
 
 func _ready():
 	texture = $Viewport.get_texture()
 	
-func update_health_bar(hp, max_hp):
-	bar.update_health_bar(hp, max_hp);
+func updateHealthBar(hp, max_hp):
+	bar.updateHealthBar(hp, max_hp);

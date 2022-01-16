@@ -6,7 +6,8 @@ var gravity : float = 29.0
 
 var vel : Vector3 = Vector3()
 
-onready var camera = get_node("camera_pivot")
+onready var camera = get_node("cameraPivot")
+onready var inventory = get_node("characterInventory")
 
 func _physics_process(delta):
 	vel.x = 0
@@ -40,3 +41,6 @@ func _physics_process(delta):
 		vel.y = jump_force
 		
 	vel = move_and_slide(vel, Vector3.UP)
+
+func get_inventory():
+	return inventory.get_items()

@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=3 format=2]
+
+[ext_resource path="res://UI/theme/yrsaFont24.tres" type="DynamicFont" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.501961, 0.501961, 0.501961, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.25098, 0.25098, 0.25098, 1 )
+
+[resource]
+default_font = ExtResource( 1 )
+GridContainer/constants/hseparation = 10
+GridContainer/constants/vseparation = 10
+Panel/styles/panel = SubResource( 1 )

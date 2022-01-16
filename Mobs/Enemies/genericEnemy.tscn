@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://UI/diageticStuff/npcHealthBar3D.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/diageticStuff/npcNameTag3D.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Mobs/Enemies/genericEnemy.gd" type="Script" id=3]
+[ext_resource path="res://Mobs/Enemies/EnemyStats.gd" type="Script" id=4]
 
 [sub_resource type="CapsuleMesh" id=1]
 radius = 0.5
@@ -25,10 +26,13 @@ material/0 = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0 )
 shape = SubResource( 3 )
 
-[node name="Sprite3D" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.21876, 0 )
-
 [node name="npcNameTag3D" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.55693, 0 )
+
+[node name="npcHealthBar3D" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.19339, 0 )
+
+[node name="EnemyStats" type="Node" parent="."]
+script = ExtResource( 4 )
 
 [connection signal="input_event" from="." to="." method="_on_genericEnemy_input_event"]

@@ -8,11 +8,37 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Resource",
+"class": "equipmentResource",
+"language": "GDScript",
+"path": "res://items/equipmentResource.gd"
+}, {
+"base": "Resource",
+"class": "itemResource",
+"language": "GDScript",
+"path": "res://items/itemResource.gd"
+}, {
+"base": "Resource",
+"class": "stageResource",
+"language": "GDScript",
+"path": "res://levels/scripts/stageResource.gd"
+} ]
+_global_script_class_icons={
+"equipmentResource": "",
+"itemResource": "",
+"stageResource": ""
+}
+
 [application]
 
 config/name="FantasyRPG"
-run/main_scene="res://stage_design/levels/alpha_level.tscn"
+run/main_scene="res://game/gameManager.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Constants="*res://constants.gd"
 
 [display]
 
@@ -60,6 +86,21 @@ turnRight={
 jump={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":32,"unicode":0,"echo":false,"script":null)
+ ]
+}
+callInventory={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":73,"unicode":0,"echo":false,"script":null)
+ ]
+}
+callEquipment={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":79,"unicode":0,"echo":false,"script":null)
+ ]
+}
+escape={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 

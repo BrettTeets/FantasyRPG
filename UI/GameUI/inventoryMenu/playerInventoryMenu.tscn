@@ -1,0 +1,84 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/theme/greyTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Imports/white.png" type="Texture" id=2]
+[ext_resource path="res://UI/GameUI/inventoryMenu/playerInventoryMenu.gd" type="Script" id=3]
+
+[node name="playerInventoryMenu" type="CenterContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_clip_content = true
+mouse_filter = 2
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+inventoryControl = "res://UI/GameUI/inventoryMenu/inventoryItemBox.tscn"
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 410.0
+margin_top = 190.0
+margin_right = 1510.0
+margin_bottom = 890.0
+rect_min_size = Vector2( 1100, 700 )
+theme = ExtResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="top" type="Control" parent="Panel/VBoxContainer"]
+margin_right = 1100.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 1100, 64 )
+
+[node name="titleBar" type="TextureRect" parent="Panel/VBoxContainer/top"]
+modulate = Color( 0.25098, 0.25098, 0.25098, 1 )
+margin_right = 1100.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 1100, 64 )
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="titleText" type="Label" parent="Panel/VBoxContainer/top"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_bottom = -23.0
+rect_min_size = Vector2( 1084, 24 )
+theme = ExtResource( 1 )
+text = "Player Inventory"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="scrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer"]
+margin_top = 68.0
+margin_right = 1100.0
+margin_bottom = 700.0
+rect_min_size = Vector2( 1100, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+
+[node name="GridContainer" type="GridContainer" parent="Panel/VBoxContainer/scrollContainer"]
+margin_right = 1100.0
+margin_bottom = 632.0
+rect_min_size = Vector2( 1100, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}

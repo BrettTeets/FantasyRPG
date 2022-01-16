@@ -1,0 +1,74 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/theme/greyTheme.tres" type="Theme" id=1]
+[ext_resource path="res://UI/GameUI/inventoryMenu/FullItemBox.gd" type="Script" id=2]
+[ext_resource path="res://Imports/EmptyDiamond.png" type="Texture" id=3]
+
+[node name="inventoryItemBox" type="Panel"]
+anchor_right = 0.0333333
+anchor_bottom = 0.0592593
+margin_right = 256.0
+rect_min_size = Vector2( 320, 64 )
+size_flags_horizontal = 3
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton" type="MenuButton" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+items = [ "Use Item", null, 0, false, false, 0, 0, null, "", false, "Equip Item", null, 0, false, false, 1, 0, null, "", false, "Drop Item", null, 0, false, false, 2, 0, null, "", false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.028125
+anchor_top = 0.078125
+anchor_right = 0.95625
+anchor_bottom = 0.953125
+margin_left = -1.0
+margin_top = -1.0
+margin_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 292, 56 )
+mouse_filter = 2
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="itemIcon" type="TextureRect" parent="HBoxContainer"]
+margin_right = 56.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 56, 56 )
+mouse_filter = 2
+theme = ExtResource( 1 )
+texture = ExtResource( 3 )
+stretch_mode = 4
+
+[node name="itemName" type="Label" parent="HBoxContainer"]
+margin_left = 60.0
+margin_top = 15.0
+margin_right = 260.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 200, 25 )
+size_flags_horizontal = 3
+theme = ExtResource( 1 )
+text = "Sample Item Text, With lots of extra word going off the edge to see how well this works."
+clip_text = true
+
+[node name="itemAmount" type="Label" parent="HBoxContainer"]
+margin_left = 264.0
+margin_top = 15.0
+margin_right = 304.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 25 )
+theme = ExtResource( 1 )
+text = "999"
+align = 2
+valign = 1
+clip_text = true

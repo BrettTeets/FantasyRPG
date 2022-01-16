@@ -1,12 +1,13 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Imports/new_dynamicfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://UI/theme/yrsaFont24.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Imports/white.png" type="Texture" id=2]
 [ext_resource path="res://UI/playerUI.gd" type="Script" id=3]
 
 [node name="playerUI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 1
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false

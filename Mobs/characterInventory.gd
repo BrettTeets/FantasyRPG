@@ -1,5 +1,7 @@
 extends Node
 
+#slate for removal.
+
 export var heldItems = Array()
 
 #Holds all the item resource files. for quick reference.

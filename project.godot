@@ -9,25 +9,67 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Resource",
-"class": "equipmentResource",
+"base": "Node",
+"class": "armsPart",
 "language": "GDScript",
-"path": "res://items/equipmentResource.gd"
+"path": "res://Actors/Player/partScripts/armsPart.gd"
+}, {
+"base": "itemResource",
+"class": "clothingResource",
+"language": "GDScript",
+"path": "res://items/clothingResource.gd"
+}, {
+"base": "Node",
+"class": "feetPart",
+"language": "GDScript",
+"path": "res://Actors/Player/partScripts/feetPart.gd"
+}, {
+"base": "Node",
+"class": "handsPart",
+"language": "GDScript",
+"path": "res://Actors/Player/partScripts/handsPart.gd"
+}, {
+"base": "Node",
+"class": "headPart",
+"language": "GDScript",
+"path": "res://Actors/Player/partScripts/headPart.gd"
 }, {
 "base": "Resource",
 "class": "itemResource",
 "language": "GDScript",
 "path": "res://items/itemResource.gd"
 }, {
+"base": "Node",
+"class": "legsPart",
+"language": "GDScript",
+"path": "res://Actors/Player/partScripts/legsPart.gd"
+}, {
 "base": "Resource",
 "class": "stageResource",
 "language": "GDScript",
 "path": "res://levels/scripts/stageResource.gd"
+}, {
+"base": "Node",
+"class": "torsoPart",
+"language": "GDScript",
+"path": "res://Actors/Player/partScripts/torsoPart.gd"
+}, {
+"base": "Node",
+"class": "waistPart",
+"language": "GDScript",
+"path": "res://Actors/Player/partScripts/waistPart.gd"
 } ]
 _global_script_class_icons={
-"equipmentResource": "",
+"armsPart": "",
+"clothingResource": "",
+"feetPart": "",
+"handsPart": "",
+"headPart": "",
 "itemResource": "",
-"stageResource": ""
+"legsPart": "",
+"stageResource": "",
+"torsoPart": "",
+"waistPart": ""
 }
 
 [application]
@@ -39,6 +81,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Constants="*res://constants.gd"
+global="*res://global.gd"
 
 [display]
 
@@ -101,6 +144,11 @@ callEquipment={
 escape={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+callPhysical={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":80,"unicode":0,"echo":false,"script":null)
  ]
 }
 

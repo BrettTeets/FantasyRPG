@@ -6,6 +6,13 @@ onready var itemDatabase = get_node("/root/gameManager/itemDatabase")
 #Actually stores all the items in a flat array.
 var heldItems = Array()
 
+func _ready():
+	print("ready")
+	add_item("potion", 16)
+	add_item("t shirt", 2)
+	add_item("tank top", 1)
+	print(heldItems)
+
 #gets all the items in the inventory
 func get_items():
 	return heldItems;
@@ -14,7 +21,7 @@ func get_items():
 func find_item_index(stringId):
 	var c = 0
 	for i in heldItems:
-		if i.stringId == stringId:
+		if i.itemReference.stringId == stringId:
 			return c
 		else:
 			c += 1

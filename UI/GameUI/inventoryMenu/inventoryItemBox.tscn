@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://UI/theme/greyTheme.tres" type="Theme" id=1]
-[ext_resource path="res://UI/GameUI/inventoryMenu/FullItemBox.gd" type="Script" id=2]
+[ext_resource path="res://UI/GameUI/inventoryMenu/inventoryItemBox.gd" type="Script" id=2]
 [ext_resource path="res://Imports/EmptyDiamond.png" type="Texture" id=3]
 
 [node name="inventoryItemBox" type="Panel"]

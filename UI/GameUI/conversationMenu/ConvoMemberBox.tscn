@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UI/GameUI/conversationMenu/convoMemberBox.gd" type="Script" id=1]
+
+[node name="convoMemberBox" type="Panel"]
+margin_right = 360.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 128, 64 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hAlign" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="charName" type="Label" parent="hAlign"]
+margin_top = 25.0
+margin_right = 178.0
+margin_bottom = 39.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Character Name"
+
+[node name="charMood" type="Label" parent="hAlign"]
+margin_left = 182.0
+margin_top = 25.0
+margin_right = 360.0
+margin_bottom = 39.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Character Mood"

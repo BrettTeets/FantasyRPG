@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://stage_design/Scenery/Tree.tscn" type="PackedScene" id=1]
 [ext_resource path="res://stage_design/Scenery/Platform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://stage_design/Scenery/lamppost.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Actors/NPC/genericSpeaker.tscn" type="PackedScene" id=4]
 [ext_resource path="res://stage_design/Scenery/SpawnPad.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Mobs/Enemies/genericEnemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Actors/Enemies/genericEnemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://stage_design/Scenery/30x30Square.tscn" type="PackedScene" id=7]
 
 [node name="alpha_level" type="Node"]
@@ -86,4 +87,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.97856, 2.88041, -4.50784 )
 [node name="EnemyStats" parent="genericEnemy" index="4"]
 characterName = "Goblin"
 
+[node name="genericSpeaker" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.53021, 2.88042, 3.10904 )
+
+[node name="simpleCharacter" parent="genericSpeaker" index="4"]
+characterName = "Joe"
+characterMood = 1
+
 [editable path="genericEnemy"]
+[editable path="genericSpeaker"]

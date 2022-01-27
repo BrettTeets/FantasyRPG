@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/theme/greyTheme.tres" type="Theme" id=1]
+[ext_resource path="res://UI/theme/yrsaFont32.tres" type="DynamicFont" id=2]
+[ext_resource path="res://UI/GameUI/socialMenu/charBox.gd" type="Script" id=3]
+
+[node name="charBox" type="CenterContainer"]
+margin_right = 292.0
+margin_bottom = 66.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pAlign" type="PanelContainer" parent="."]
+margin_top = 2.0
+margin_right = 292.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 180, 62 )
+
+[node name="hAlign" type="HBoxContainer" parent="pAlign"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 285.0
+margin_bottom = 55.0
+
+[node name="charName" type="Label" parent="pAlign/hAlign"]
+margin_top = 7.0
+margin_right = 204.0
+margin_bottom = 40.0
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Character Name"
+
+[node name="charMood" type="Label" parent="pAlign/hAlign"]
+margin_left = 208.0
+margin_top = 7.0
+margin_right = 278.0
+margin_bottom = 40.0
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Mood"

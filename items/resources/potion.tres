@@ -6,7 +6,10 @@
 [resource]
 script = ExtResource( 1 )
 stringId = "potion"
+itemDesc = ""
 stackable = true
 stackSize = 9
-type = 2
 texture = ExtResource( 2 )
+weight = 0.0
+value = 0
+aspects = [  ]

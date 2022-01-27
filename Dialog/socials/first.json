@@ -1,0 +1,13 @@
+{
+    "1":{"character":"AAA", "type":"text", "text":"Why Hello There"},
+    "2":{"character":"BBB", "type":"text", "text":"Hello to you too."},
+    "3":{"character":"AAA", "type":"query", "text":"what time is it",
+        "query":[{"prompt":"11:00", "jump":"4"},
+        {"prompt":"12:00", "jump":"6"}]},
+    "4":{"character":"BBB", "type":"text", "text":"Oh good I still have time"},
+    "5":{"character":"BBB", "type":"jump", "jump":"8"},
+    "6":{"character":"BBB", "type":"text", "text":"Oh No. I am late."},
+    "7":{"character":"BBB", "type":"end"},
+    "8":{"character":"BBB", "type":"text", "text":"I should hurry up though."},
+    "9":{"character":"BBB", "type":"end"}
+}

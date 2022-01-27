@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/theme/yrsaFont24.tres" type="DynamicFont" id=2]
+[ext_resource path="res://UI/Hud/playerUI.gd" type="Script" id=3]
+
+[node name="playerUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="PanelContainer" parent="."]
+margin_right = 160.0
+margin_bottom = 45.0
+
+[node name="nameTag" type="Label" parent="Panel"]
+margin_left = 7.0
+margin_top = 10.0
+margin_right = 349.0
+margin_bottom = 35.0
+custom_fonts/font = ExtResource( 2 )
+text = "Player Name with a really long name."
+__meta__ = {
+"_edit_use_anchors_": false
+}

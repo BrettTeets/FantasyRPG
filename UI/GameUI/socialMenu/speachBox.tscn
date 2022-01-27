@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/theme/greyTheme.tres" type="Theme" id=1]
+[ext_resource path="res://UI/theme/yrsaFont32.tres" type="DynamicFont" id=2]
+[ext_resource path="res://UI/GameUI/socialMenu/speachBox.gd" type="Script" id=3]
+
+[node name="speachBox" type="CenterContainer"]
+margin_right = 1400.0
+margin_bottom = 85.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pAlign" type="PanelContainer" parent="."]
+margin_left = 10.0
+margin_right = 1390.0
+margin_bottom = 85.0
+rect_min_size = Vector2( 1380, 66 )
+size_flags_horizontal = 3
+
+[node name="vAlign" type="VBoxContainer" parent="pAlign"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1373.0
+margin_bottom = 78.0
+
+[node name="charName" type="Label" parent="pAlign/vAlign"]
+margin_right = 1366.0
+margin_bottom = 33.0
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Character Name"
+
+[node name="hAlign" type="HBoxContainer" parent="pAlign/vAlign"]
+margin_top = 37.0
+margin_right = 1366.0
+margin_bottom = 71.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="spacer" type="ColorRect" parent="pAlign/vAlign/hAlign"]
+margin_right = 42.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 42, 0 )
+color = Color( 1, 1, 1, 0 )
+
+[node name="textBox" type="RichTextLabel" parent="pAlign/vAlign/hAlign"]
+margin_left = 46.0
+margin_right = 1366.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+custom_fonts/mono_font = ExtResource( 2 )
+custom_fonts/bold_italics_font = ExtResource( 2 )
+custom_fonts/italics_font = ExtResource( 2 )
+custom_fonts/bold_font = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 2 )
+text = "Text."
+fit_content_height = true
+scroll_active = false

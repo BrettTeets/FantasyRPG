@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UI/GameUI/socialMenu/socialMenu.gd" type="Script" id=3]
+
+[node name="socialMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="ColorRect" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1400.0
+margin_top = -320.0
+rect_min_size = Vector2( 1400, 320 )
+color = Color( 0.501961, 0.501961, 0.501961, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vAlign" type="VBoxContainer" parent="background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="charCells" type="HBoxContainer" parent="background/vAlign"]
+margin_right = 1400.0
+margin_bottom = 66.0
+rect_min_size = Vector2( 0, 66 )
+
+[node name="sAlign" type="ScrollContainer" parent="background/vAlign"]
+margin_top = 70.0
+margin_right = 1400.0
+margin_bottom = 252.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="dialogCell" type="VBoxContainer" parent="background/vAlign/sAlign"]
+margin_right = 1400.0
+margin_bottom = 182.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="background/vAlign"]
+margin_top = 256.0
+margin_right = 1400.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 0, 64 )
+
+[node name="Button" type="Button" parent="background/vAlign/HBoxContainer"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )

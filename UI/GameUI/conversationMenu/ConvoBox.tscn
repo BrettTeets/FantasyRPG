@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/theme/greyTheme.tres" type="Theme" id=1]
+[ext_resource path="res://UI/GameUI/conversationMenu/convoBox.gd" type="Script" id=2]
+
+[node name="convoBox" type="PanelContainer"]
+anchor_right = 0.377083
+anchor_bottom = 0.0888889
+rect_min_size = Vector2( 0, 96 )
+size_flags_horizontal = 3
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="vAlign" type="VBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 716.999
+margin_bottom = 89.0
+
+[node name="charName" type="Label" parent="vAlign"]
+margin_right = 709.0
+margin_bottom = 25.0
+text = "Character Name Goes Gere"
+
+[node name="hAlign" type="HBoxContainer" parent="vAlign"]
+margin_top = 29.0
+margin_right = 709.0
+margin_bottom = 55.0
+
+[node name="spacer" type="Panel" parent="vAlign/hAlign"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 30.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 30, 0 )
+size_flags_vertical = 3
+
+[node name="convo" type="RichTextLabel" parent="vAlign/hAlign"]
+margin_left = 34.0
+margin_right = 709.0
+margin_bottom = 26.0
+rect_clip_content = false
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+text = "Conversation Goes Here."
+fit_content_height = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}

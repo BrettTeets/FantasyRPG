@@ -1,7 +1,7 @@
 extends Node
 
 export var characterName : String
-export(Constants.MOOD) var characterMood = Constants.MOOD.OKAY;
+export(global.MOODS) var characterMood = global.MOODS.OKAY;
 
 export var hp : int = 100
 export var maxHp : int = 100

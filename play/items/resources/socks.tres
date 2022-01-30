@@ -1,0 +1,27 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://play/items/itemResource.gd" type="Script" id=1]
+[ext_resource path="res://Imports/badShirt.png" type="Texture" id=2]
+[ext_resource path="res://play/items/resources/clothingAspects/socks.tres" type="Resource" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 1, 1, 0, 1 )
+metallic = 1.0
+roughness = 0.5
+
+[sub_resource type="SphereMesh" id=2]
+material = SubResource( 1 )
+radius = 0.5
+height = 1.0
+
+[resource]
+script = ExtResource( 1 )
+stringId = "socks"
+itemDesc = "simple white socks"
+stackable = false
+stackSize = 1
+texture = ExtResource( 2 )
+mesh = SubResource( 2 )
+weight = 1.0
+value = 5
+aspects = [ ExtResource( 3 ) ]

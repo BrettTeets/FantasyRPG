@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://play/items/itemResource.gd" type="Script" id=1]
+[ext_resource path="res://Imports/badShirt.png" type="Texture" id=2]
+[ext_resource path="res://play/items/resources/clothingAspects/underwear.tres" type="Resource" id=3]
+
+[resource]
+script = ExtResource( 1 )
+stringId = "underwear"
+itemDesc = "A plain set of underwear."
+stackable = false
+stackSize = 1
+texture = ExtResource( 2 )
+weight = 1.0
+value = 10
+aspects = [ ExtResource( 3 ) ]

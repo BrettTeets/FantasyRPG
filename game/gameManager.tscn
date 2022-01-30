@@ -1,15 +1,10 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://items/resources/potion.tres" type="Resource" id=1]
-[ext_resource path="res://game/scripts/itemDatabase.gd" type="Script" id=2]
-[ext_resource path="res://items/resources/tankTop.tres" type="Resource" id=3]
 [ext_resource path="res://game/stageManager.gd" type="Script" id=4]
-[ext_resource path="res://levels/resources/alphaLevel.tres" type="Resource" id=5]
-[ext_resource path="res://Actors/Player/playerActor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://staging/actors/Player/playerActor.tscn" type="PackedScene" id=6]
 [ext_resource path="res://game/gameManager.gd" type="Script" id=7]
 [ext_resource path="res://UI/GameUI/inventoryMenu/inventoryMenu.tscn" type="PackedScene" id=8]
 [ext_resource path="res://UI/GameUI/equipmentMenu/playerEquipmentMenu.tscn" type="PackedScene" id=9]
-[ext_resource path="res://items/resources/tshirt.tres" type="Resource" id=10]
 [ext_resource path="res://UI/GameUI/physicalMenu/physicalMenu.tscn" type="PackedScene" id=11]
 [ext_resource path="res://game/menuManager.gd" type="Script" id=12]
 [ext_resource path="res://game/SocialManager.gd" type="Script" id=13]
@@ -37,13 +32,8 @@ visible = false
 pause_mode = 1
 visible = false
 
-[node name="itemDatabase" type="Node" parent="."]
-script = ExtResource( 2 )
-items = [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 10 ) ]
-
 [node name="stageManager" type="Node" parent="."]
 script = ExtResource( 4 )
-stages = [ ExtResource( 5 ) ]
 
 [node name="playerActor" parent="stageManager" instance=ExtResource( 6 )]
 

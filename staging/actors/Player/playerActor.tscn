@@ -1,0 +1,89 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://play/Characters/partScripts/waistPart.gd" type="Script" id=1]
+[ext_resource path="res://UI/Hud/playerUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://play/Characters/physical.gd" type="Script" id=3]
+[ext_resource path="res://play/Characters/partScripts/handsPart.gd" type="Script" id=4]
+[ext_resource path="res://play/Characters/partScripts/torsoPart.gd" type="Script" id=5]
+[ext_resource path="res://play/Characters/playerCharacter.gd" type="Script" id=6]
+[ext_resource path="res://play/Characters/equipment.gd" type="Script" id=7]
+[ext_resource path="res://play/Characters/partScripts/armsPart.gd" type="Script" id=8]
+[ext_resource path="res://play/Characters/partScripts/feetPart.gd" type="Script" id=9]
+[ext_resource path="res://staging/actors/Player/playerActor.gd" type="Script" id=10]
+[ext_resource path="res://staging/actors/Player/cameraPivot.gd" type="Script" id=11]
+[ext_resource path="res://play/Characters/partScripts/legsPart.gd" type="Script" id=12]
+[ext_resource path="res://play/Characters/partScripts/headPart.gd" type="Script" id=13]
+[ext_resource path="res://play/Characters/inventory.gd" type="Script" id=14]
+
+[sub_resource type="CapsuleMesh" id=1]
+radius = 0.5
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.443137, 0.211765, 0.92549, 1 )
+
+[sub_resource type="CapsuleShape" id=3]
+radius = 0.5
+
+[node name="playerActor" type="KinematicBody"]
+script = ExtResource( 10 )
+
+[node name="Canvas" type="CanvasLayer" parent="."]
+
+[node name="playerUI" parent="Canvas" instance=ExtResource( 2 )]
+mouse_filter = 2
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0 )
+shape = SubResource( 3 )
+
+[node name="cameraPivot" type="Spatial" parent="."]
+script = ExtResource( 11 )
+
+[node name="Camera" type="Camera" parent="cameraPivot"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2, 1.5, -3 )
+
+[node name="playerCharacter" type="Node" parent="."]
+script = ExtResource( 6 )
+alias = "Steve"
+
+[node name="equipment" type="Node" parent="playerCharacter"]
+script = ExtResource( 7 )
+
+[node name="inventory" type="Node" parent="playerCharacter"]
+script = ExtResource( 14 )
+
+[node name="physical" type="Node" parent="playerCharacter"]
+script = ExtResource( 3 )
+
+[node name="head" type="Node" parent="playerCharacter/physical"]
+script = ExtResource( 13 )
+stringId = "head"
+
+[node name="torso" type="Node" parent="playerCharacter/physical"]
+script = ExtResource( 5 )
+stringId = "torso"
+
+[node name="waist" type="Node" parent="playerCharacter/physical"]
+script = ExtResource( 1 )
+stringId = "waist"
+
+[node name="legs" type="Node" parent="playerCharacter/physical"]
+script = ExtResource( 12 )
+stringId = "legs"
+
+[node name="arms" type="Node" parent="playerCharacter/physical"]
+script = ExtResource( 8 )
+stringId = "arms"
+
+[node name="feet" type="Node" parent="playerCharacter/physical"]
+script = ExtResource( 9 )
+stringId = "feet"
+
+[node name="hands" type="Node" parent="playerCharacter/physical"]
+script = ExtResource( 4 )
+stringId = "hands"

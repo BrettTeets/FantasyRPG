@@ -49,7 +49,7 @@ func parse_dialog(dialog):
 		print("Error that type of dialog does not exist.")
 			
 func mood_to_string(mood):
-	return Constants.MOOD.keys()[mood];
+	return global.MOODS.keys()[mood];
 	
 func display_text_dialog(dialog):
 	socialMenu.add_dialog(get_character_name(dialog), get_dialog_text(dialog));

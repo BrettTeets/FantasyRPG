@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://play/items/clothingResource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+slot = 3
+covers = 3
+color = Color( 1, 1, 1, 1 )
+style = [ 1, 1, 1, 1, 1, 1, 1, 5 ]

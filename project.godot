@@ -12,52 +12,57 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "armsPart",
 "language": "GDScript",
-"path": "res://Actors/Player/partScripts/armsPart.gd"
+"path": "res://play/Characters/partScripts/armsPart.gd"
 }, {
-"base": "itemResource",
+"base": "Resource",
 "class": "clothingResource",
 "language": "GDScript",
-"path": "res://items/clothingResource.gd"
+"path": "res://play/items/clothingResource.gd"
 }, {
 "base": "Node",
 "class": "feetPart",
 "language": "GDScript",
-"path": "res://Actors/Player/partScripts/feetPart.gd"
+"path": "res://play/Characters/partScripts/feetPart.gd"
 }, {
 "base": "Node",
 "class": "handsPart",
 "language": "GDScript",
-"path": "res://Actors/Player/partScripts/handsPart.gd"
+"path": "res://play/Characters/partScripts/handsPart.gd"
 }, {
 "base": "Node",
 "class": "headPart",
 "language": "GDScript",
-"path": "res://Actors/Player/partScripts/headPart.gd"
+"path": "res://play/Characters/partScripts/headPart.gd"
 }, {
 "base": "Resource",
 "class": "itemResource",
 "language": "GDScript",
-"path": "res://items/itemResource.gd"
+"path": "res://play/items/itemResource.gd"
 }, {
 "base": "Node",
 "class": "legsPart",
 "language": "GDScript",
-"path": "res://Actors/Player/partScripts/legsPart.gd"
+"path": "res://play/Characters/partScripts/legsPart.gd"
 }, {
-"base": "Resource",
-"class": "stageResource",
+"base": "KinematicBody",
+"class": "playerActor",
 "language": "GDScript",
-"path": "res://levels/scripts/stageResource.gd"
+"path": "res://staging/actors/Player/playerActor.gd"
+}, {
+"base": "Reference",
+"class": "stock",
+"language": "GDScript",
+"path": "res://play/items/stock.gd"
 }, {
 "base": "Node",
 "class": "torsoPart",
 "language": "GDScript",
-"path": "res://Actors/Player/partScripts/torsoPart.gd"
+"path": "res://play/Characters/partScripts/torsoPart.gd"
 }, {
 "base": "Node",
 "class": "waistPart",
 "language": "GDScript",
-"path": "res://Actors/Player/partScripts/waistPart.gd"
+"path": "res://play/Characters/partScripts/waistPart.gd"
 } ]
 _global_script_class_icons={
 "armsPart": "",
@@ -67,7 +72,8 @@ _global_script_class_icons={
 "headPart": "",
 "itemResource": "",
 "legsPart": "",
-"stageResource": "",
+"playerActor": "",
+"stock": "",
 "torsoPart": "",
 "waistPart": ""
 }
@@ -80,8 +86,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Constants="*res://constants.gd"
 global="*res://global.gd"
+ItemDatabase="*res://game/itemDatabase.gd"
 
 [display]
 

@@ -19,7 +19,7 @@ func _ready():
 			stagePaths.append("res://staging/stages/%s" % filename)
 		filename = directory.get_next();
 	
-	load_stage(0, 0)
+	load_stage(1, 0)
 	
 	
 func load_stage(stage_id, gate_id):

@@ -34,6 +34,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://play/Characters/partScripts/headPart.gd"
 }, {
+"base": "Reference",
+"class": "inventoryAspect",
+"language": "GDScript",
+"path": "res://play/Characters/aspects/inventoryAspect.gd"
+}, {
 "base": "Resource",
 "class": "itemResource",
 "language": "GDScript",
@@ -70,6 +75,7 @@ _global_script_class_icons={
 "feetPart": "",
 "handsPart": "",
 "headPart": "",
+"inventoryAspect": "",
 "itemResource": "",
 "legsPart": "",
 "playerActor": "",
@@ -157,6 +163,12 @@ callPhysical={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":80,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[layer_names]
+
+3d_physics/layer_1="World"
+3d_physics/layer_3="Player"
+3d_physics/layer_5="NPC"
 
 [physics]
 

@@ -29,8 +29,3 @@ func get_aspect(itemAspect):
 	return false;
 	
 
-
-
-#IsFlame
-#EquipCost
-

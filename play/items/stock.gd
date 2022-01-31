@@ -11,7 +11,3 @@ func _init(s, a):
 	source = s;
 	amount = a;
 	
-		
-	
-
- 

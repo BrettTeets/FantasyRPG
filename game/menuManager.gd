@@ -54,7 +54,8 @@ func open_inventory_menu():
 	inventory.pause_mode = PAUSE_MODE_PROCESS
 	inventory.visible = true
 	isInventoryUp = true
-	inventory.set_inventory(player.get_character().get_items())
+	var character = player.get_character()
+	inventory.set_inventory(character.get_items(), character.get_inventory())
 
 func close_inventory_menu():
 	inventory.pause_mode = PAUSE_MODE_STOP

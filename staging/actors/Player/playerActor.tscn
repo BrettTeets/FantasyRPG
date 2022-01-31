@@ -13,7 +13,6 @@
 [ext_resource path="res://staging/actors/Player/cameraPivot.gd" type="Script" id=11]
 [ext_resource path="res://play/Characters/partScripts/legsPart.gd" type="Script" id=12]
 [ext_resource path="res://play/Characters/partScripts/headPart.gd" type="Script" id=13]
-[ext_resource path="res://play/Characters/inventory.gd" type="Script" id=14]
 
 [sub_resource type="CapsuleMesh" id=1]
 radius = 0.5
@@ -23,6 +22,150 @@ albedo_color = Color( 0.443137, 0.211765, 0.92549, 1 )
 
 [sub_resource type="CapsuleShape" id=3]
 radius = 0.5
+
+[sub_resource type="GDScript" id=4]
+script/source = "extends Node
+
+#Actually stores all the items in a flat array.
+var heldItems = [null, null, null, null, null, null, null]
+
+#gets all the items in the inventory
+func get_items():
+	return heldItems;
+
+#finds the index of an item by the items name.
+func find_item_index(stringId):
+	var c = 0
+	for i in heldItems:
+		if i.source.stringId == stringId:
+			return c
+		else:
+			c += 1
+
+#gets an item by its index in the held items, ideally use find item index first.
+func get_item(index):
+	return heldItems[index]
+
+#loops through and removes and item, returns boolean indicating success.
+func remove_item(stringId, amount):
+	if amount <= 0:
+		print(\"Error: Invalid number of items requested\")
+		return false;
+	if amount > _count_items(stringId):
+		print(\"Error: Requested more items that avalible\");
+		return false;
+	
+	#Loop through and decrement the appropriote item stacks if they run out mark them for removal.
+	var remainder = amount;
+	var remove = Array()
+	for i in heldItems:
+		if remainder > 0:
+			if i.source.stringId == stringId:
+				if i.amount > remainder:
+					i.amount -= remainder;
+					remainder = 0;
+				else:
+					remainder -= i.amount;
+					#remove.append(i);
+					#we are now going to set the slot to null.
+					i = null;
+		else:
+			break;
+
+	#now remove the emptied items.
+	#for r in remove:
+		#heldItems.erase(r)
+	
+	return true;
+	
+#method to get an item by name, remove a certian amount from it.
+func _count_items(stringId):
+	var count = 0;
+	for i in heldItems:
+		if i.source.stringId == stringId:
+			count += i.amount;
+	return count;
+
+#adds an item. Uses the stringId to find the correct item to add.
+func add_item(stringId, amount):
+	if amount <= 0:
+		print(\"cant add a negative number of items\")
+		return -1;
+	
+	var resource = ItemDatabase.get_item(stringId)
+	if not resource:
+		print(\"item not in database.\")
+		return -1;
+		
+	if resource.stackSize > 1:
+		amount = _add_to_existing_items(resource, amount)
+	if amount > 0:
+		#add new item has a loop built in.
+		return _add_new_items(resource, amount)
+		
+	return 0;
+
+#loops through and adds new items, filling the stacks as it goes.
+#this should leave nothing left in the remainder.
+func _add_new_items(item, remainder):
+	while remainder > 0:
+		if has_empty_slot():
+			var index = get_empty_slot();
+			var newItem = stock.new(item, min(remainder, item.stackSize))
+			#lets just make sure it is empty.
+			assert(heldItems[index] == null);
+			heldItems[index] = newItem;
+			
+			remainder -= newItem.amount
+		else:
+			return remainder;
+		
+#Loops through existing items and tries to fill them with the new item.
+#this should return what ever it could not fill as a new remainder.
+func _add_to_existing_items(resource, remainder):
+	for select in heldItems:
+		if remainder == 0:
+			break
+		if not select:
+			continue 
+		if select.source.stringId != resource.stringId:
+			continue
+		
+		if select.amount < resource.stackSize:
+			var diff = resource.stackSize - select.amount
+			if remainder <= diff:
+				select.amount += remainder
+				remainder = 0
+			else:
+				select.amount += diff
+				remainder -= diff
+	return remainder
+
+func increase_slots(i):
+	heldItems.push_back(null);
+	
+func decrease_slots(i):
+	var old = heldItems.pop_back();
+
+func has_empty_slot():
+	for i in heldItems:
+		if not i:
+			return true;
+	return false;
+
+func get_empty_slot():
+	var c = 0;
+	for i in heldItems:
+		if not i:
+			return c;
+		else:
+			c += 1;
+			
+func swap_items(a, b):
+	print(a)
+	print(b)
+	
+"
 
 [node name="playerActor" type="KinematicBody"]
 script = ExtResource( 10 )
@@ -55,7 +198,7 @@ alias = "Steve"
 script = ExtResource( 7 )
 
 [node name="inventory" type="Node" parent="playerCharacter"]
-script = ExtResource( 14 )
+script = SubResource( 4 )
 
 [node name="physical" type="Node" parent="playerCharacter"]
 script = ExtResource( 3 )

@@ -9,8 +9,8 @@ export var ability = [50, 50, 50, 50, 50, 50, 50, 50, 0, 0]
 export var rep = [50, 50, 50, 50]
 
 onready var playerUI = get_node("../Canvas/playerUI")
-onready var equipment = get_node("equipment")
-onready var inventory = get_node("inventory")
+onready var equipment =  get_node("equipment")
+onready var inventory = inventoryAspect.new()
 onready var physical = get_node("physical")
 
 #mostly for debugging purposes.
@@ -31,9 +31,12 @@ func get_equipment_text(slot):
 	
 func get_equipment_array(slot):
 	return equipment.get_equipment_array(slot);
-	
+
+func get_inventory():
+	return inventory;
+
 func get_items():
-	return inventory.get_items()
+	return inventory.get_all_items()
 	
 func get_parts():
 	return physical.get_parts();

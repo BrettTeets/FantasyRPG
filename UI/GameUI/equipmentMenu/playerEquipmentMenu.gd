@@ -23,11 +23,12 @@ func update_display_auto():
 	
 func set_inventory(items, character):
 	for i in items:
-		if i.source.has_aspect(global.ITEMS.EQUIPABLE):
-			var n = load(inventoryControl).instance()
-			var slot = i.source.get_aspect(global.ITEMS.EQUIPABLE).slot
-			n.set_item(i.source.texture, i.source.stringId , slot, character, self)
-			container.add_child(n)
+		if i:
+			if i.source.has_aspect(global.ITEMS.EQUIPABLE):
+				var n = load(inventoryControl).instance()
+				var slot = i.source.get_aspect(global.ITEMS.EQUIPABLE).slot
+				n.set_item(i.source.texture, i.source.stringId , slot, character, self)
+				container.add_child(n)
 
 func clear_inventory():
 	for n in container.get_children():
